@@ -249,8 +249,8 @@ using SpecialFunctions
 
 ## gamma function
 
-@device_override SpecialFunctions.lgamma(x::Float64) = ccall("extern __nv_lgamma", llvmcall, Cdouble, (Cdouble,), x)
-@device_override SpecialFunctions.lgamma(x::Float32) = ccall("extern __nv_lgammaf", llvmcall, Cfloat, (Cfloat,), x)
+@device_override SpecialFunctions.loggamma(x::Float64) = ccall("extern __nv_lgamma", llvmcall, Cdouble, (Cdouble,), x)
+@device_override SpecialFunctions.loggamma(x::Float32) = ccall("extern __nv_lgammaf", llvmcall, Cfloat, (Cfloat,), x)
 
 @device_function tgamma(x::Float64) = ccall("extern __nv_tgamma", llvmcall, Cdouble, (Cdouble,), x)
 @device_function tgamma(x::Float32) = ccall("extern __nv_tgammaf", llvmcall, Cfloat, (Cfloat,), x)
